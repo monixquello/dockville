@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/public/css/register.css">
+    <title>register</title>
+</head>
+<body>
+    <div class="dockille">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav-head">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="landing2.html">
+              <img src="/public/images/dock-logo.png" width="70px" height="70px">
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item services dockville">
+ 
+                <li class="nav-item ">
+                  <a class="nav-link" href="#">
+                      <h3>Parking</h3>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="park.html">
+                    <button type="submit" class="btn sign ">back</button>
+                  </a>
+                </li>
+  
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <h4 class="title">Register form</h4>
+    <div class="box">
+    <div class="card">
+        <div class="card-body">
+          
+            <form class="parking-form" id="formId" name="register" action="#">
+              <div class="row">
+                <div class="col">
+                  <label for="firstname">Firstname</label>
+                  <input type="text" class="form-control"  aria-label="First name">
+                </div>
+                <div class="col">
+                  <label for="lastname">Last name</label>
+                  <input type="text" class="form-control" aria-label="Last name">
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label for="telephone">Telephone</label>
+                    <input type="number" class="form-control"  aria-label="telephone">
+                  </div>
+                  <div class="col">
+                    <label for="numberplate">Number plate</label>
+                    <input type="alpha-numreic" class="form-control"  aria-label="numberplate">
+                  </div>
+
+                </div>
+                <div class="mb-3">
+                  <label for="vehicletype" class="form-label">Vehicle type</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>select</option>
+                    <option value="coasters">Coasters</option>
+                    <option value="trucks">Trucks</option>
+                    <option value="taxi">Taxi</option>
+                    <option value="personalcar">Personal cars</option>
+                    <option value="bodas">Bodas</option>
+                  </select>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label for="model">Model</label>
+                    <input type="text" class="form-control"  aria-label="model">
+                  </div>
+                  <div class="col">
+                    <label for="color">Color</label>
+                    <input type="color" class="form-control"  aria-label="color">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label for="date">Date</label>
+                    <input type="date" class="form-control"  aria-label="date">
+                  </div>
+                  <div class="col">
+                    <label for="time">Time</label>
+                    <input type="time" class="form-control"  aria-label="time">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="parkingtype" class="form-label">Parking type</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>select</option>
+                    <option value="day">Day</option>
+                    <option value="night">Night</option>
+                    <option value="less3hrs">Less than 3hrs</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="charge" class="form-label">Charge</label>
+                  <input type="charge" class="form-control" id="charge">
+                </div>
+
+
+                <button type="submit" class="btn signin">Submit</button>
+              </form>
+        </div>
+      </div>
+    </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

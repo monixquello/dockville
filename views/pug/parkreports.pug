@@ -1,0 +1,53 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css')
+  link(rel='stylesheet' href='/css/registerList.css')
+  title Document
+.dockille
+  nav#nav-head.navbar.navbar-expand-lg.bg-body-tertiary
+    .container-fluid
+      a.navbar-brand(href='landing.html')
+        img(src='/images/dock-logo.png' width='70px' height='70px')
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item.services.dockville
+          li.nav-item
+            a.nav-link(href='#')
+              h3.parked Parked cars
+          li.nav-item
+            a.nav-link(href='parkdash')
+              button.btn.sign(type='submit') back
+table.table.park.table-hover
+  thead.table-dark.hero
+    tr
+      th(scope='col') Firstname
+      th(scope='col') Lastname
+      th(scope='col') Numberplate
+      th(scope='col') Date
+      th(scope='col') Time
+      th(scope='col') Time out
+      th(scope='col') Parking type
+      th(scope='col') Charge
+      th(scope='col') Delete
+      th(scope='col') Edit
+  tbody
+  if registers.length 
+  each register in registers
+    tr
+      th #{register.firstname}
+      td #{register.lastname}
+      td #{register.numberplate}
+      td #{register.date}
+      td #{register.time}
+      td 
+        form(action="/api/register/delete" method="POST")
+           input(type="hidden" name="id" value=register._id)
+           a.btn.btn-danger(type="submit") Delete 
+      td 
+        a.btn.btn-warning(href="/api/register/edit/"+register._id) Edit
+ 
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')

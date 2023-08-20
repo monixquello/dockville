@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/public/css/sign.css">
+    <title>Signup</title>
+</head>
+<body>
+    <div class="dockille">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav-head">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="landing">
+              <img src="/public/images/dock-logo.png" width="70px" height="70px">
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item services dockville">
+ 
+                <li class="nav-item ">
+                  <a class="nav-link" href="#">
+                      <!-- <button class="button">Login</button> -->
+                  </a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <button type="submit" class="btn sign ">Login</button>
+                  </a>
+                </li> -->
+  
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    <div class="box">
+    <div class="card">
+        <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <label for="firstname">Firstname</label>
+                  <input type="text" class="form-control" name="firstname"  aria-label="First name">
+                </div>
+                <div class="col">
+                  <label for="lastname">Last name</label>
+                  <input type="text" class="form-control"name="lastname" aria-label="Last name">
+                </div>
+              </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="contacts" class="form-label">Contacts</label>
+                  <input type="contacts" class="form-control" name="contacts" id="contacts" >
+                </div>
+                <div class="mb-3">
+                  <label for="NIN-No" class="form-label">NIN No.</label>
+                  <input type="NIN-No" class="form-control" name="NIN-No" id="NIN-No" >
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control"name="password" id="exampleInputPassword1">
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label for="gender">Gender</label>
+                    <select class="form-select" name="gender" aria-label="Default select example">
+                      <option selected>Select</option>
+                      <option value="female">Female</option>
+                      <option value="male">Male</option>
+                    </select>
+                  </div>
+                  <div class="col">
+                    <label for="role">Role</label>
+                    <select class="form-select" name="role" aria-label="Default select example">
+                      <option selected>Select</option>
+                      <option value="manager">Manager</option>
+                      <option value="employee">Employee</option>
+                    </select>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn signin">Signin</button>
+              </form>
+        </div>
+      </div>
+    </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
