@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const registerSchema = new mongoose.Schema({
     firstname:{
         type:String,
-        required:true,
         trim:true
     },
     lastname:{
@@ -20,6 +19,9 @@ const registerSchema = new mongoose.Schema({
         
     },
     model:{
+        type:String
+    },
+    status:{
         type:String
     },
     color:{

@@ -11,22 +11,35 @@
     width: 80px;
     float: left;
 }
+body{
+    background-image: url(/images/battery.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlap h1{
+    color: bisque;
+    font-size: 75px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.overlap p i{
+    color: bisque;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
 
 .services{
     font-size: 15px;
     text-transform: uppercase;
     font-weight: bold;
     padding-left: 25px;
-    float: left;
-    margin-left: 30px;
 
 }
 
-body{
-    background-color: #fff;
-    padding: 0;
-    margin: 0;
-}
+
 
 .box{
     padding-left: 550px;
@@ -37,7 +50,7 @@ body{
 .card{
     border-radius: 20px;
     box-shadow: 0px 5px 15px   rgba(181, 180, 180, 0.5);
-    width: 1000px;
+    width: 500px;
 }
 
 .sign{
@@ -84,11 +97,22 @@ body{
     gap: 45px;
 }
 
+.overlap p i{
+    color: bisque;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
 .info{
     font-size: 40px;
 }
 
-
+.services{
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
 
 .cars{
     font-size: 30px;
@@ -103,9 +127,24 @@ body{
     justify-content: center;
     gap: 10px;
     margin-right: 20px;
+}   
+
+.mybtn{
+    height: 50px;
+    font-size: 15px;
+    font-weight: bolder;
+    width: 150px;
 }
 
-.park{
-    text-decoration: none;
-    font-size: 30px;
+a.mybtn{
+    justify-content: center;
+    align-items: center;
 }
+
+.mony{
+    margin-top: 35px;
+    margin-left: 150px;
+}
+
+
+

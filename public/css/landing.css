@@ -38,3 +38,22 @@ body{
     padding-left: 25px;
 
 }
+
+.sign{
+    float: left;
+    margin-left: 1350px;
+    font-weight: bolder;
+}
+
+.btn{
+    background-color: rgb(252, 194, 86);
+    border-radius: 20px;
+    width: 90px;
+}
+
+/* .btn.signin{
+
+    margin-top: 15px;
+    width: 120px;
+    font-weight: bolder;
+} */

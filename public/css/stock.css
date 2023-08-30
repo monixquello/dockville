@@ -29,7 +29,7 @@ body{
 
 .btn.signin{
 
-    margin-top: 15px;
+    margin-top: 20px;
     width: 120px;
     font-weight: bolder;
 }
@@ -41,8 +41,3 @@ body{
     margin-top: 20px;
     text-transform: uppercase;
 }
-
-.tyre{
-    font-size: 20px;
-}
-

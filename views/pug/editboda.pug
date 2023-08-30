@@ -25,42 +25,42 @@ h4.title Boda rental form
 .box
   .card
     .card-body
-      form#formId(name="boda" action="/api/regboda" method="POST")
+      form#formId(name="boda" action="/api/boda/edit?id="+boda._id method="POST")
         .row
           .col
             label(for='firstname') Firstname
-            input.form-control(type='text' name="firstname" aria-label='First name')
+            input.form-control(type='text' name="firstname" aria-label='First name' value=boda.firstname)
           .col
             label(for='lastname') Last name
-            input.form-control(type='text' name="lastname" aria-label='Last name')
+            input.form-control(type='text' name="lastname" aria-label='Last name' value=boda.lastname)
         .col
           label(for='gender') Gender
-          select.form-select(aria-label='Default select example' name="gender")
-            option(selected='') select
-            option(value='female') Female
-            option(value='male') Male
-        .row
+          select.form-select(aria-label='Default select example' name="gender" value=boda.gender)
+            option(value='select' selected=(boda.gender === 'select' ? 'selected' : '')) Select
+            option(value='female' selected=(boda.gender === 'female' ? 'selected' : '')) Female
+            option(value='male' selected=(boda.gender === 'male' ? 'selected' : '')) Male
+
           .col
             label(for='telephone') Telephone
-            input.form-control(type='number' name="telephone" aria-label='telephone')
+            input.form-control(type='number' name="telephone" aria-label='telephone' value=boda.telephone)
           .col
             label(for='color') Color
-            input.form-control(type='color' name="color" aria-label='color')
+            input.form-control(type='color' name="color" aria-label='color' value=boda.color)
         .col
           label(for='NIN-No') NIN No
-          input.form-control(type='alpha-text' name="NIN_No" aria-label='NIN-No')
+          input.form-control(type='alpha-text' name="NIN_No" aria-label='NIN-No' value=boda.NIN_No)
         .col
           label(for='model') Boda model
-          input.form-control(type='text' name="bodamodel" aria-label='model')
+          input.form-control(type='text' name="bodamodel" aria-label='model' value=boda.bodamodel)
         .row
           .col
             label(for='date') Date
-            input.form-control(type='date' name="date" aria-label='date')
+            input.form-control(type='date' name="date" aria-label='date' value=boda.date)
           .col
             label(for='time') Time
-            input.form-control(type='time' name="time" aria-label='time')
+            input.form-control(type='time' name="time" aria-label='time' value=boda.time)
         .mb-3
           label.form-label(for='charge') Charge
-          input#charge.form-control(type='charge' name="charge")
+          input#charge.form-control(type='charge' name="charge" value=boda.charge)
         button.btn.signin(type='submit') Submit
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')

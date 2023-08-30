@@ -25,41 +25,41 @@ h4.title Tyre purchase form
 .box
   .card
     .card-body
-      form#formId.tyre2-form(name='tyre2' action='/api/regtyre2' onsubmit="return Validate()" method="POST")
+      form#formId.tyre2-form(name='tyre2' action='/api/tyre2/edit?id'+tyre2._id onsubmit="return Validate()" method="POST")
         .row
           .col
             label(for='firstname') Firstname
-            input.form-control(type='text' name='firstname' aria-label='First name')
+            input.form-control(type='text' name='firstname' aria-label='First name' value=tyre2.firstname)
           .col
             label(for='lastname') Last name
-            input.form-control(type='text' name='lastname' aria-label='Last name')
+            input.form-control(type='text' name='lastname' aria-label='Last name' value='Last name' )
         .col
           label(for='telephone') Telephone
-          input.form-control(type='number' name='telephone' aria-label='telephone')
+          input.form-control(type='number' name='telephone' aria-label='telephone' value=tyre2.telephone)
         .mb-3
           label.form-label(for='tyre-type') Tyre type
-          select.form-select(aria-label='Default select example' name='tyretype')
+          select.form-select(aria-label='Default select example' name='tyretype' value=tyre2.tyre-type)
             option(selected='') select
             option(value='brand-new') Brand new
             option(value='Used-tyres') Used tyres
         .row
           .col
             label(for='size') Tyre size
-            input.form-control(type='text' name='tyre-size' aria-label='tyre-size')
+            input.form-control(type='text' name='tyre-size' aria-label='tyre-size' value=tyre2.tyre-size)
           .col
             label(for='make') Tyre make
-            input.form-control(type='text' name='tyre-make' aria-label='make')
+            input.form-control(type='text' name='tyre-make' aria-label='make' value=tyre2.tyre-make)
         .col
           label(for='model')  Car Model
-          input.form-control(type='text' name='model' aria-label='model')
+          input.form-control(type='text' name='model' aria-label='model' value=tyre2.model)
         .col
           label(for='quantity')  Quantity
-          input.form-control(type='text' name='quantity' aria-label='quantity')
+          input.form-control(type='text' name='quantity' aria-label='quantity' value=tyre2.quantity)
         .col
           label(for='date') Date
-          input.form-control(type='date' name='date' aria-label='date')
+          input.form-control(type='date' name='date' aria-label='date' value=tyre2.date)
         .mb-3
           label.form-label(for='charge') Charge
-          input#charge.form-control(type='charge' name='charge')
+          input#charge.form-control(type='charge' name='charge' value=tyre2.charge)
         button.btn.signin(type='submit') Submit
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')

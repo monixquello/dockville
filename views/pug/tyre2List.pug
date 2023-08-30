@@ -19,7 +19,7 @@ head
             a.nav-link(href='#')
               h3.parked Tyre Section
           li.nav-item
-            a.nav-link(href='tyre.html')
+            a.nav-link(href='tyredash')
               button.btn.sign(type='submit') back
 table.table.park.table-hover
   thead.table-dark.hero
@@ -33,12 +33,12 @@ table.table.park.table-hover
       th(scope='col') Delete
       th(scope='col') Edit
   tbody
-  if tyres.length 
-  each tyre in tyres
+  if tyre2s.length 
+  each tyre2 in tyre2s
     tr
       th #{tyre2.firstname}
       td #{tyre2.lastname}
-      td #{tyre2.tyre type}
+      td #{tyre2.tyretype}
       td #{tyre2.quantity}
       td #{tyre2.date}
       td #{tyre2.charge}

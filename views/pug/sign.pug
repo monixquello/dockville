@@ -15,14 +15,14 @@ head
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.me-auto.mb-2.mb-lg-0
           li.nav-item.services.dockville
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-               <button type="submit" class="btn sign ">Back</button>
+            li.nav-item
+              a.nav-link(href="/api/dashboard")
+                button.btn.sign(type="submit" ) Back
 h3.signin Signup Form 
 .box
   .card
     .card-body
-      form#formId.sign-form(name='sign' action='/api/register' onsubmit="return Validate()" method="POST")
+      form#formId.sign-form(name='sign' action='/api/sign'  method="POST")
         .row
           .col
             label(for='firstname') Firstname
@@ -32,7 +32,7 @@ h3.signin Signup Form
             input.form-control(type='text' name='lastname' aria-label='Last name')
         .mb-3
           label.form-label(for='username') Username
-          input#username.form-control(type='text' name='username')
+          input#username.form-control(type='text' name='username' )
         .mb-3
           label.form-label(for='exampleInputEmail1') Email address
           input#exampleInputEmail1.form-control(type='email' name='email' aria-describedby='emailHelp')

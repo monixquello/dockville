@@ -21,7 +21,7 @@ const tyreSchema = new mongoose.Schema({
     model:{
         type:String,
     },
-    tyreservice:{
+    tyre_service:{
         type:String,
     },
     date:{

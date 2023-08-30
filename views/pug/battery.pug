@@ -19,13 +19,13 @@ head
             a.nav-link(href='#')
               h3.tyre Battery section
           li.nav-item
-            a.nav-link(href='#')
-              button.btn.sign(type='submit') back
+            a.nav-link(href='batterydash')
+              button.btn.sign(type='submit') back        
 h4.title Battery purchase form
 .box
   .card
     .card-body
-      form#formId(name='battery' action='/api/regbattery' method='POST')
+      form#formId(name='battery' action='/api/battery' method='POST')
         .row
           .col
             label(for='firstname') Firstname
@@ -35,7 +35,7 @@ h4.title Battery purchase form
             input.form-control(type='text' name="lastname" aria-label='Last name')
         .col
           label(for='telephone') Telephone
-          input.form-control(type='number' aria-label='telephone' name='telephone')
+          input.form-control(type='tel' aria-label='telephone' name='telephone')
         .mb-3
           label.form-label(for='battery-type') Battery type
           select.form-select(aria-label='Default select example' name="battery_type")
@@ -57,7 +57,7 @@ h4.title Battery purchase form
         .row
           .col
             label(for='voltage') Voltage
-            input.form-control(type='text' name="voltage" aria-label='First name')
+            input.form-control(type='text' name="voltage" aria-label='voltage')
           .col
             label(for='type') Battery Status
             select.form-select(aria-label='Default select example' name="battery_status")

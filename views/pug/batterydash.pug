@@ -4,55 +4,58 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==' crossorigin='anonymous' referrerpolicy='no-referrer')
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css')
-  link(rel='stylesheet' href='/css/dash.css')
-  title Parking section
+  link(rel='stylesheet' href='/css/batterydash.css')
+  title Battery section
 .dockille
   nav#nav-head.navbar.navbar-expand-lg.bg-body-tertiary
     .container-fluid
-      a.navbar-brand(href='#')
+      a.navbar-brand(href='landing')
         img(src='/images/dock-logo.png' width='70px' height='70px')
       button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.me-auto.mb-2.mb-lg-0
-          li.nav-item.services
-            a.nav-link.active(aria-current='page' href='landing') Dashboard
+          li.nav-item.services.dockville
+          li.nav-item
+            a.nav-link(href='#')
+              h3.tyre Battery
           .dropdown
             button.btn.btn-light.dropdown-toggle.services(type='button' data-bs-toggle='dropdown' aria-expanded='false')
-              | Add
+              | Services
             ul.dropdown-menu
               li
                 button.dropdown-item(type='button')
-                  a(href='sign' class="park") AddUser
+                  a(href='battery' class="park") Battery Purchase
               li
                 button.dropdown-item(type='button')
-                  a(href='stock' class="park") AddStock  
-          li.nav-item.services
-            a.nav-link.active(aria-current='page' href='log') Reports
-          li.nav-item.services
-            a.nav-link.active(aria-current='page' href='login') Settings
+                  a(href='boda' class="park") Boda Purchase
+              li
+                button.dropdown-item(type='button')
+                  a(href='bodaList' class="park") Boda report
+              li
+                button.dropdown-item(type='button') 
+                  a(href='batterydash' class="park") Battery report
           li.nav-item
             a.nav-link(href='landing')
               button.btn.sign(type='submit') Logout
-// cards
-.overlap
-  .cards
-    .card(style='width: 18rem;')
+.overlap(style='text-align: center;')
+  h1 Welcome to the Battery Section
+  p 
+    i A Center for All Your Rental Services
+
+.row
+  .col-sm-6.mb-3.mb-sm-0
+    .card.mony
       .card-body
-        p.card-text.info Parking
-        h5.card-title.cars Total Sales
-        span.fas.fa-car
-  .cards
-    .card(style='width: 18rem;')
+        h5.card-title.info Battery Rent
+        a.btn.btn-primary.mybtn(href='Boda') Click me
+  .col-sm-6
+    .card.mony
       .card-body
-        p.card-text.info Car Clinic
-        h5.card-title.cars Total Sales
-        span.fas.fa-car
-  .cards
-    .card(style='width: 18rem;')
-      .card-body
-        p.card-text.info Battery
-        h5.card-title.cars Total Sales
-        span.fas.fa-car
+        h5.card-title.info Boda Rent
+        a.btn.btn-primary.mybtn(href='Battery') Click me
+
+//- a(href="#") 
+//-   button.register(type="button") 
 
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')

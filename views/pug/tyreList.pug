@@ -3,7 +3,7 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css')
-  link(rel='stylesheet' href='/css/tyre2List.css')
+  link(rel='stylesheet' href='/css/tyreList.css')
   title tyre
 .dockille
   nav#nav-head.navbar.navbar-expand-lg.bg-body-tertiary
@@ -19,14 +19,14 @@ head
             a.nav-link(href='#')
               h3.parked Tyre Section
           li.nav-item
-            a.nav-link(href='tyre.html')
+            a.nav-link(href='tyredash')
               button.btn.sign(type='submit') back
 table.table.park.table-hover
   thead.table-dark.hero
     tr
       th(scope='col') Firstname
       th(scope='col') Lastname
-      th(scope='col') Service
+      th(scope='col') Tyre_Service
       th(scope='col') Date
       th(scope='col') Charge
       th(scope='col') Delete
@@ -37,7 +37,7 @@ table.table.park.table-hover
     tr
       th #{tyre.firstname}
       td #{tyre.lastname}
-      td #{tyre.service}
+      td #{tyre.tyre_service}
       td #{tyre.date}
       td #{tyre.charge}
       td 
