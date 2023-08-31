@@ -161,6 +161,27 @@ router.get("/tyre2", async(req, res)=>{
 
 })
 
+router.post('/search', async (req, res) => {
+    try {
+        const searchTerm = req.body.search.toLowerCase();
+        const items = await Tyre2  .find({
+            $or: [
+                { firstname: { $regex: searchTerm, $options: 'i' } },
+                { lastname: { $regex: searchTerm, $options: 'i' } },
+                { tyretype: { $regex: searchTerm, $options: 'i' } },
+                { quantity: { $regex: searchTerm, $options: 'i' } },
+                { date: { $regex: searchTerm, $options: 'i' } },
+                { charge: { $regex: searchTerm, $options: 'i' } }
+            ]
+        });
+
+        res.render('tyre2List.pug', { tyre2s: items });
+    } catch (error) {
+        console.log(error);
+        return res.status(400).send({ message: "Could not perform search" });
+    }
+});
+
 
 router.get("/tyre2/edit/:id", async(req, res)=>{
     try{

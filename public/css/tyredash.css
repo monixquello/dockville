@@ -12,10 +12,11 @@
     float: left;
 }
 body{
-    /* background-image: url(/images/tyre.jpg); */
+    background-image: url(/images/tyre.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
+    height: 100vh;
 }
 
 .overlap h1{

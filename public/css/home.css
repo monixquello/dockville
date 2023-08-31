@@ -1,0 +1,67 @@
+#nav-head{
+    background-color: #f7f7bb;
+}
+
+.button{
+    border-radius: 10px;
+    background-color: #f7f7bb;
+    text-transform: uppercase;
+    font-weight: bolder;
+    height: 40px;
+    width: 80px;
+    float: left;
+}
+body{
+    /* background-image: url(/images/docky.jpg); */
+    background-color: #70c28f;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlap h1{
+    color: bisque;
+    font-size: 80px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.overlap p i{
+    color: bisque;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.services{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-left: 25px;
+
+}
+
+.sign{
+    float: left;
+    margin-left: 1350px;
+    font-weight: bolder;
+}
+
+.btn{
+    background-color: rgb(252, 194, 86);
+    border-radius: 20px;
+    width: 90px;
+}
+
+/* .btn.signin{
+
+    margin-top: 15px;
+    width: 120px;
+    font-weight: bolder;
+} */
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+}

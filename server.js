@@ -5,6 +5,9 @@ const passport = require('passport');
 
 // importing database setup
 const connectdb = require("./config/dbConfig");
+connectdb();
+
+
 const port = process.env.PORT || 3000;
 
 const app = express();
@@ -35,7 +38,6 @@ const expressSession = require("express-session")({
 app.use(express.urlencoded({extended:false}))
 app.use(express.json());
 
-connectdb();
 
 // setting pug as the view engine
 app.engine("pug",require("pug").__express);
