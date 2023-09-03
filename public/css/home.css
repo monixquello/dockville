@@ -12,10 +12,10 @@
     float: left;
 }
 body{
-    /* background-image: url(/images/docky.jpg); */
-    background-color: #70c28f;
+    /* background-image: url(/images/docky.jpg);
+    background-color: #1c9048;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 }
 
 .overlap h1{

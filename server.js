@@ -26,6 +26,7 @@ const batteryRoutes = require("./controllers/batteryRoutes");
 const bodaRoutes = require("./controllers/bodaRoutes");
 const dashRoutes = require("./controllers/dashRoutes");
 const stockRoutes = require("./controllers/stockRoutes");
+const signRoutes = require("./controllers/signRoutes");
 
 
 const expressSession = require("express-session")({
@@ -70,6 +71,7 @@ app.use("/api", batteryRoutes);
 app.use("/api", bodaRoutes); 
 app.use("/api", dashRoutes);
 app.use("/api", stockRoutes);
+app.use("/api", signRoutes);
 
 
 

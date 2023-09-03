@@ -1,7 +1,10 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const Register = require("../models/registerModel");
 
 const router = express.Router();
+
+const registerForm = mongoose.model("Register");
 
 router.get("/registerform", (req, res) => {
   res.render("register.pug");
@@ -98,8 +101,9 @@ router.get("/register/edit/:id", async(req, res)=>{
         const reg = await Register.findOne({
             _id:req.query.id
         })
-        console.log(reg)
-        res.render("editregister", {register:reg});
+        console.log(Register)
+        res.render("editregister", {Register:reg});
+
     }
     catch(error){
         res.status(400).send("Could not find register in database")

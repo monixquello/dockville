@@ -16,47 +16,47 @@ head
         ul.navbar-nav.me-auto.mb-2.mb-lg-0
           li.nav-item.services.dockville
             li.nav-item
-              a.nav-link(href="/api/signList")
+              a.nav-link(href="/api/dashboard")
                 button.btn.sign(type="submit" ) Back
 h3.signin Signup Form 
 .box
   .card
     .card-body
-      form#formId.sign-form(name='sign' action='/api/regsign'  method="POST")
+      form#formId.sign-form(name='sign' action='/api/sign/edit?id='+sign._id  method="POST")
         .row
           .col
             label(for='firstname') Firstname
-            input.form-control(type='text' name='firstname' aria-label='First name')
+            input.form-control(type='text' name='firstname' aria-label='First name' value=sign.firstname)
           .col
             label(for='lastname') Last name
-            input.form-control(type='text' name='lastname' aria-label='Last name')
+            input.form-control(type='text' name='lastname' aria-label='Last name' value=sign.lastname)
         .mb-3
           label.form-label(for='username') Username
-          input#username.form-control(type='text' name='username' )
+          input#username.form-control(type='text' name='username' value=sign.username)
         .mb-3
           label.form-label(for='exampleInputEmail1') Email address
-          input#exampleInputEmail1.form-control(type='email' name='email' aria-describedby='emailHelp')
+          input#exampleInputEmail1.form-control(type='email' name='email' aria-describedby='emailHelp' value=sign.email)
         .mb-3
           label.form-label(for='contacts') Contacts
-          input#contacts.form-control(type='contacts' name='contacts')
+          input#contacts.form-control(type='contacts' name='contacts' value=sign.contacts)
         .mb-3
           label.form-label(for='NIN_No') NIN No.
-          input#NIN-No.form-control(type='alpha-text' name='NIN_No')
+          input#NIN-No.form-control(type='alpha-text' name='NIN_No' value=sign.NIN_No)
         .mb-3
           label.form-label(for='exampleInputPassword1') Password
-          input#exampleInputPassword1.form-control(type='password' name='password')
+          input#exampleInputPassword1.form-control(type='password' name='password' value=sign.password)
         .row
           .col
             label(for='gender') Gender
             select.form-select(name='gender' aria-label='Default select example')
-              option(selected='') Select
-              option(value='female') Female
-              option(value='male') Male
+              option(selected='' selected=(sign.gender === 'select' ? 'selected' : '')) Select
+              option(value='female' selected=(sign.gender === 'female' ? 'selected' : '')) Female
+              option(value='male' selected=(sign.gender === 'male' ? 'selected' : '')) Male
           .col
             label(for='role') Role
             select.form-select(name='role' aria-label='Default select example')
-              option(selected='') Select
-              option(value='manager') Manager
-              option(value='employee') Employee
+              option(selected='' selected=(role.gender === 'select' ? 'selected' : '')) Select
+              option(value='manager' selected=(role.gender === 'manager' ? 'selected' : '')) Manager
+              option(value='employee' selected=(role.gender === 'employee' ? 'selected' : '')) Employee
         button.btn.signin(type='submit') AddUser
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')

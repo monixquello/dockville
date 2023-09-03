@@ -41,3 +41,21 @@ body{
     text-transform: uppercase;
     font-weight: bolder;
 }
+
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+#site-main{
+    margin-top: 6em;
+    font-family: 'barlow', sans-serif;
+}
+
+#site-main.container.box-nav>a{
+    padding: ;
+}
