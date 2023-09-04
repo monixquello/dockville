@@ -2,7 +2,7 @@ const express = require("express");
 const Sign = require("../models/signModel");
 const router = express.Router();
 const passport = require("passport");
-// const { ensureLoggedIn } = require("connect-ensure-login");
+const { ensureLoggedIn } = require("connect-ensure-login");
 
 
 router.get("/sign", 
@@ -30,9 +30,7 @@ router.post("/regsign", async (req, res) => {
   }
 });
 
-router.get("/log", (req, res)=>{
-  res.render("log.pug")
-});
+
 
 router.get("/signList", async (req,res)=>{
   try{
@@ -91,28 +89,40 @@ router.post("/sign/edit", async(req, res) => {
       }
 })
 
+// login routes
 
+router.get("/log", (req, res)=>{
+  res.render("log.pug")
+});
 
-router.post("/log", passport.authenticate("local",
-{failureRedirect:"/api/log"}),
-  (req, res) => {
-    req.session.user=req.user
-    let loggedInUser = req.session.user.firstname;
-    console.log(loggedInUser)
-    console.log(req.body)
-    console.log(req.session.user.role)
-    if(req.session.user.role==='manager'){
-      res.render('dashboard.pug')
-    }
-    else if(req.session.user.role==='employee'){
-      res.render('tyredash.pug')
-    }
-    else if(req.session.user.role==='employee'){
-      res.render('parkdash.pug')
-    }
+// router.post("/logi", passport.authenticate("local",
+// {failureRedirect:"/api/log"}),
+//   (req, res) => {
+//     req.session.user=req.user
+//     let loggedInUser = req.session.user.firstname;
+//     console.log(loggedInUser)
+//     console.log(req.body)
+//     console.log(req.session.user.role)
+//     if(req.session.user.role==='manager'){
+//       res.redirect('/api/dashboard')
+//     }
+//     if(req.session.user.role==='employee'){
+//       res.redirect('/api/home')
+//     }
     
+    
+//   }
+// )
+
+router.post("/logi",passport.authenticate("local", { failureRedirect: "/api/log" }),
+  (req, res) => {
+    req.session.user = req.user;
+    res.redirect("/api/home");
   }
-)
+);
+
+
+
 
 router.get("/logout", (req, res)=>{
   req.session.destroy(()=>{res.redirect("/api/login")})

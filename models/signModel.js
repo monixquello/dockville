@@ -27,6 +27,7 @@ const signSchema = new mongoose.Schema({
     },
     password:{
         type:String,
+        trim:true,
     },
     gender:{
         type:String,
@@ -36,5 +37,5 @@ const signSchema = new mongoose.Schema({
     },
 });
 
-signSchema.plugin(passportlocalmongoose,{usernameField: 'email'});
+signSchema.plugin(passportlocalmongoose,{usernameField:'email'});
 module.exports = mongoose.model("Sign", signSchema);

@@ -1,3 +1,6 @@
+
+
+
 #nav-head{
     background-color: #f7f7bb;
 }
@@ -11,38 +14,38 @@
     width: 80px;
     float: left;
 }
-body{
-    /* background-image: url(/images/docky.jpg);
-    background-color: #1c9048;
-    background-repeat: no-repeat;
-    background-size: cover; */
-}
-
-.overlap h1{
-    color: bisque;
-    font-size: 80px;
-    margin-top: 30px;
-    margin-left: 30px;
-}
-
-.overlap p i{
-    color: bisque;
-    font-size: 20px;
-    margin-top: 30px;
-    margin-left: 30px;
-}
 
 .services{
     font-size: 15px;
     text-transform: uppercase;
     font-weight: bold;
     padding-left: 25px;
+    float: left;
+    margin-left: 30px;
 
+}
+
+body{
+    background-color: rgb(247, 232, 208);
+    padding: 0;
+    margin: 0;
+}
+
+.box{
+    padding-left: 550px;
+    padding-top: 30px;
+   
+}
+
+.card{
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px   rgba(181, 180, 180, 0.5);
+    width: 1000px;
 }
 
 .sign{
     float: left;
-    margin-left: 1350px;
+    margin-left: 1200px;
     font-weight: bolder;
 }
 
@@ -52,16 +55,86 @@ body{
     width: 90px;
 }
 
-/* .btn.signin{
+.btn.signin{
 
     margin-top: 15px;
     width: 120px;
     font-weight: bolder;
-} */
+}
 
-.box{
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.tyre{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cards{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.overlap{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 45px;
+}
+
+.info{
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+
+
+.cars{
+    font-size: 50px;
+    color: rgb(127, 114, 90);
+    font-weight: bolder;
+}
+
+.price{
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.park{
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.income{
+    font-size: 30px;
+}
+
+.mony{
+    width:300px;
+    margin-left: 250px;
+    margin-top: 30px;
+}
+
+.head{
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.click{
+    font-size: 25px;
+    width: 140px;
+    font-weight: bolder;
+}
+
+.text{
+    font-size: 25px;
 }

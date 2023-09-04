@@ -5,8 +5,5 @@ router.get("/landing", (req, res)=>{
     res.render("landing.pug")
 })
 
-router.get("/home", (req, res)=>{
-    res.render("home.pug")
-});
 
 module.exports = router;

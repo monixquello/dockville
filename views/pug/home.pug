@@ -2,10 +2,10 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='stylesheet' href='/css/bootstrap.css')
-  link(rel='stylesheet' href='/css/home.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==' crossorigin='anonymous' referrerpolicy='no-referrer')
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css')
-title landing page
+  link(rel='stylesheet' href='/css/home.css')
+  title Parking section
 .dockille
   nav#nav-head.navbar.navbar-expand-lg.bg-body-tertiary
     .container-fluid
@@ -15,35 +15,38 @@ title landing page
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.me-auto.mb-2.mb-lg-0
-
+          li.nav-item.services
+            a.nav-link.active(aria-current='page' href='#') DockVille
           li.nav-item
-            a.nav-link(href='#')
-              button.button.btn.sign(type='submit') Logout
+            a.nav-link(href='landing')
+              button.btn.sign(type='submit') Logout
 .overlap(style='text-align: center;')
-  h1 Dockville Services
-  p
-    i Enjoy parking as never before
-.box
-  .card.design(style='width: 18rem;')
-    img.card-img-top(src='/images/parking.jpeg' alt='...')
-    .card-body
-      h5.card-title Card title
-      p.card-text
-        | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-      a.btn.btn-primary(href='parkdash') Parking
-  .card.design(style='width: 18rem;')
-    img.card-img-top(src='/images/tyre2.jpeg' alt='...')
-    .card-body
-      h5.card-title Card title
-      p.card-text
-        | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-      a.btn.btn-primary(href='tyredash') Tyre 
-  .card.design(style='width: 18rem;')
-    img.card-img-top(src='' alt='...')
-    .card-body
-      h5.card-title Card title
-      p.card-text
-        | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-      a.btn.btn-primary(href='batterydash') Battery
-
+  h1 Welcome User To Service Station
+ 
+.row
+  .col-sm-6.mb-3.mb-sm-0
+    .card.mony
+      .card-body
+        h5.card-title.head Parking
+        p.card-text.text For All Your Parking Solutions
+        a.btn.btn-primary.click(href='parkdash') Click Me
+  .col-sm-6
+    .card.mony
+      .card-body
+        h5.card-title.head Tyre Clinic
+        p.card-text.text All You Need For Your Tyre 
+        a.btn.btn-primary.click(href='Tyredash') Click Me
+.row
+  .col-sm-6.mb-3.mb-sm-0
+    .card.mony
+      .card-body
+        h5.card-title.head Battery
+        p.card-text.text A Center For All Rental Services
+        a.btn.btn-primary.click(href='batterydash') Click Me
+  .col-sm-6
+    .card.mony
+      .card-body
+        h5.card-title.head Dashboard
+        p.card-text.text Only Authorised Personnel Please
+        a.btn.btn-primary.click(href='Dashboard') Click Me
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')

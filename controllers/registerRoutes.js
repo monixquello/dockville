@@ -1,10 +1,7 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const Register = require("../models/registerModel");
 
 const router = express.Router();
-
-const registerForm = mongoose.model("Register");
 
 router.get("/registerform", (req, res) => {
   res.render("register.pug");
@@ -33,7 +30,7 @@ router.post("/regregister", async (req, res) => {
             res.render("parkdash.pug",
              {registers: items,
                 vehiclesIn: vehiclesIn,
-                vehiclesOut: vehiclesOut
+                vehiclesOut: vehiclesOut,
             }
              );
         }
@@ -42,22 +39,13 @@ router.post("/regregister", async (req, res) => {
             return res.status(400).send({message: "Sorry could not get register form"});
         }
     });
+
+
     
-    // router.get("/parkdash", async (req, res)=>{
-    //     try{
-    //         let totalVehicle = await Register.aggregate([
-    //             {"$group":{_id:"$all",
-    //             totalsum: {$sum:"$charge"}
-    //         }}
-    //         ]);
-    //         res.render("parkdash",{totalVehicle:totalVehicle[0].totalsum})
- 
-    //     }
-    //     catch(error){
-    //         console.log(error);
-    //         return res.status(400).send({message: "Sorry could not get register form"});
-    //     }
-    // });
+
+    
+    
+   
 
  
     
@@ -82,6 +70,30 @@ router.post("/regregister", async (req, res) => {
 })
 
 
+// search routes
+router.post('/search', async (req, res) => {
+    try {
+        const searchTerm = req.body.search.toLowerCase();
+        const items = await Register.find({
+            $or: [
+                { firstname: { $regex: searchTerm, $options: 'i' } },
+                { lastname: { $regex: searchTerm, $options: 'i' } },
+                { numberplate: { $regex: searchTerm, $options: 'i' } },
+                { model: { $regex: searchTerm, $options: 'i' } },
+                { status: { $regex: searchTerm, $options: 'i' } },
+                { date: { $regex: searchTerm, $options: 'i' } },
+                { time: { $regex: searchTerm, $options: 'i' } }
+            ]
+        });
+
+        res.render('parkreport.pug', { registers: items });
+    } catch (error) {
+        console.log(error);
+        return res.status(400).send({ message: "Could not perform search" });
+    }
+});
+
+
 // for deleting
 router.post("/registerList/delete",async (req, res)=>{
     try{
@@ -98,22 +110,20 @@ router.post("/registerList/delete",async (req, res)=>{
 // how to update data
 router.get("/register/edit/:id", async(req, res)=>{
     try{
-        const reg = await Register.findOne({
-            _id:req.query.id
+        const register = await Register.findOne({
+            _id:req.params.id
         })
-        console.log(Register)
-        res.render("editregister", {Register:reg});
-
+        res.render("editregister", {register:register});
     }
     catch(error){
-        res.status(400).send("Could not find register in database")
+        res.status(400).send("Could not find items in database")
         console.log(error);
     }
 })
 
 router.post("/register/edit", async(req, res) => {
     try{
-        await Register.findOneAndUpdate({_id:req.params.id}, req.body);
+        await Register.findOneAndUpdate({_id:req.query.id}, req.body);
         res.redirect("/api/parkreport");
     }
     catch(error){
@@ -127,5 +137,65 @@ router.post("/register/edit", async(req, res) => {
 
 
 
-
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // router.get("/parkdash", async (req, res)=>{
+    //     try{
+    //         let totalVehicle = await Register.aggregate([
+    //             {"$group":{_id:"$all",
+    //             totalsum: {$sum:"$charge"}
+    //         }}
+    //         ]);
+    //         res.render("parkdash",{totalVehicle:totalVehicle[0].totalsum})
+ 
+    //     }
+    //     catch(error){
+    //         console.log(error);
+    //         return res.status(400).send({message: "Sorry could not get register form"});
+    //     }
+    // });
+
+
+// router.get("/register/edit/:id", async(req, res)=>{
+//     try{
+//         const reg = await Register.findOne({
+//             _id:req.query.id
+//         })
+//         console.log(reg)
+//         res.render("editregister", {register:reg});
+//     }
+//     catch(error){
+//         res.status(400).send("Could not find register in database")
+//         console.log(error);
+//     }
+// })
+
+// router.post("/register/edit", async(req, res) => {
+//     try{
+//         await Register.findOneAndUpdate({_id:req.params.id}, req.body);
+//         res.redirect("/api/parkreport");
+//     }
+//     catch(error){
+//             res.status(400).send({message: "could not edit data"});
+//             console.log(error);
+//         }
+// })
+
+
+
+
+
+
+

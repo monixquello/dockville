@@ -29,6 +29,8 @@ const stockRoutes = require("./controllers/stockRoutes");
 const signRoutes = require("./controllers/signRoutes");
 
 
+
+
 const expressSession = require("express-session")({
     secret: "secret",
     resave: false,
@@ -47,6 +49,11 @@ app.set("view engine","pug");
 
 app.set("views",path.join(__dirname,"views/pug"));
 
+
+
+// setting up directory for specific files
+app.use(express.static(path.join(__dirname,"public")));
+
 app.use(expressSession);
 
 app.use(passport.initialize());
@@ -56,9 +63,6 @@ passport.use(Signup.createStrategy())
 passport.serializeUser(Signup.serializeUser());
 passport.deserializeUser(Signup.deserializeUser());
 
-
-// setting up directory for specific files
-app.use(express.static(path.join(__dirname,"public")));
 
 // using imported routes
 app.use("/api", landingRoutes);

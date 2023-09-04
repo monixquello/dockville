@@ -25,7 +25,7 @@ h4.title Battery purchase form
 .box
   .card
     .card-body
-      form#formId(name='battery' action='/api/battery/edit?id='+battery._id method='POST')
+      form#formId(name='battery' method='POST' action='/api/battery/edit?id='+battery._id )
         .row
           .col
             label(for='firstname') Firstname

@@ -25,64 +25,64 @@ h4.title SignOut form
 .box
   .card
     .card-body
-      form#formId.parking-form(name='register'   method="POST")
+      form#formId.parking-form(name='register' action='/api/register/edit?id=' +register._id  method="POST")
         .row
           .col
             label(for='firstname') Firstname
-            input.form-control(type='text'  name="firstname" aria-label='First name' value=registerModel.firstname)
+            input.form-control(type='text'  name="firstname" aria-label='First name' value=register.firstname)
           .col
             label(for='lastname') Last name
-            input.form-control(type='text' name="lastname" aria-label='Last name' value=lastname)
+            input.form-control(type='text' name="lastname" aria-label='Last name' value=register.lastname)
           .row
             .col
               label(for='telephone') Telephone
-              input.form-control(type='number' name=telephone aria-label='telephone' value=telephone)
+              input.form-control(type='number' name=telephone aria-label='telephone' value=register.telephone)
           .mb-3
               label.form-label(for='vehicletype') Vehicle type
               select.form-select(aria-label='Default select example' name="vehicletype")
-                option(value='select' selected=(vehicletype === 'select' ? 'selected' : '')) Select
-                option(value='coasters' selected=(vehicletype === 'coasters' ? 'selected' : '')) Coasters
-                option(value='trucks' selected=(vehicletype === 'trucks' ? 'selected' : '')) Trucks
-                option(value='taxi' selected=(vehicletype === 'taxi' ? 'selected' : '')) Taxi
+                option(value='select' selected=(register.vehicletype === 'select' ? 'selected' : '')) Select
+                option(value='coasters' selected=(register.vehicletype === 'coasters' ? 'selected' : '')) Coasters
+                option(value='trucks' selected=(register.vehicletype === 'trucks' ? 'selected' : '')) Trucks
+                option(value='taxi' selected=(register.vehicletype === 'taxi' ? 'selected' : '')) Taxi
 
           .row
             .col
               label(for='model') Model
-              input.form-control(type='text' name="model" aria-label='model' value=model)
+              input.form-control(type='text' name="model" aria-label='model' value=register.model)
 
             .col
               label(for='color') Color
-              input.form-control(type='color' name="color" aria-label='color' value=color)
+              input.form-control(type='color' name="color" aria-label='color' value=register.color)
           .row 
             .col
               label(for='numberplate') Number plate
-              input.form-control(type='alpha-text' name="numberplate" aria-label='numberplate' value=numberplate)
+              input.form-control(type='alpha-text' name="numberplate" aria-label='numberplate' value=register.numberplate)
           .row
             .col
               label(for='date') Date
-              input.form-control(type='date' name="date" aria-label='date' value=date)
+              input.form-control(type='date' name="date" aria-label='date' value=register.date)
             .col
               label(for='time') Time
-              input.form-control(type='time' name="time" aria-label='time' value=time)
+              input.form-control(type='time' name="time" aria-label='time' value=register.time)
           .row
             .col
               label.form-label(for='parkingtype') Parking type
               select.form-select(aria-label='Default select example' name="parkingtype")
-                option(value='select' selected=(parkingtype === 'select' ? 'selected' : '')) Select
-                option(value='day' selected=(parkingtype === 'day' ? 'selected' : '')) Day
-                option(value='night' selected=(parkingtype === 'night' ? 'selected' : '')) Night
-                option(value='less3hrs' selected=(parkingtype === 'less3hrs' ? 'selected' : '')) Less than 3hrs
+                option(value='select' selected=(register.parkingtype === 'select' ? 'selected' : '')) Select
+                option(value='day' selected=(register.parkingtype === 'day' ? 'selected' : '')) Day
+                option(value='night' selected=(register.parkingtype === 'night' ? 'selected' : '')) Night
+                option(value='less3hrs' selected=(register.parkingtype === 'less3hrs' ? 'selected' : '')) Less than 3hrs
 
 
             .col
               label.form-label(for='status') Status
               select.form-select(aria-label='Default select example' name="status")
-                option(value='select' selected=(status === 'select' ? 'selected' : '')) Select
-                option(value='in' selected=(status === 'In' ? 'selected' : '')) In
-                option(value='out' selected=(status === 'Out' ? 'selected' : '')) Out
+                option(value='select' selected=(register.status === 'select' ? 'selected' : '')) Select
+                option(value='in' selected=(register.status === 'In' ? 'selected' : '')) In
+                option(value='out' selected=(register.status === 'Out' ? 'selected' : '')) Out
 
           .mb-3
             label.form-label(for='charge') Charge
-            input#charge.form-control(type='charge' name="charge" value=charge)
+            input#charge.form-control(type='charge' name="charge" value=register.charge)
           button.btn.signin(type='submit') Signout
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')

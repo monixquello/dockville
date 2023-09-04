@@ -20,8 +20,8 @@ head
             a.nav-link(href='#')
               h3.parked Parking Dashboard
           li.nav-item
-            a.nav-link(href='landing')
-              button.button.btn.sign(type='submit') Logout
+            a.nav-link(href='home')
+              button.button.btn.sign(type='submit') Back
 a(href="registerform") 
   button.register(type="button") Register here
 .overlap
@@ -40,7 +40,7 @@ a(href="registerform")
   .cards
     .card(style='width: 18rem;')
       .card-body
-        p.card-text.info 20
+        p.card-text.info #{vehiclesOut.length}
         h5.card-title.cars Vehicles Out
         span.fas.fa-car
 h3.vehicle Parked Vehicles

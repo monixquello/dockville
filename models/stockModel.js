@@ -4,13 +4,10 @@ const stockSchema = new mongoose.Schema({
     itemname:{
         type:String
     },
-    item_description:{
+    description:{
         type:String
     },
-    item_make:{
-        type:String
-    },
-    item_manufacturer:{
+    itemtype:{
         type:String
     },
     quantity:{

@@ -1,3 +1,6 @@
+
+
+
 #nav-head{
     background-color: #f7f7bb;
 }
@@ -23,7 +26,7 @@
 }
 
 body{
-    background-color: #fff;
+    background-color: rgb(247, 232, 208);
     padding: 0;
     margin: 0;
 }
@@ -85,13 +88,14 @@ body{
 }
 
 .info{
-    font-size: 40px;
+    font-size: 50px;
+    font-weight: bolder;
 }
 
 
 
 .cars{
-    font-size: 30px;
+    font-size: 50px;
     color: rgb(127, 114, 90);
     font-weight: bolder;
 }
@@ -107,5 +111,9 @@ body{
 
 .park{
     text-decoration: none;
+    font-size: 30px;
+}
+
+.income{
     font-size: 30px;
 }

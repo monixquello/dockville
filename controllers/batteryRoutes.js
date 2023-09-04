@@ -66,30 +66,29 @@ router.get('/batterydash', (req, res) => {
 })
 
 // updating data
-router.get("/battery/edit/:id", async (req, res) => {
-    try {
+router.get("/battery/edit/:id", async (req, res)=>{
+    try{
         const battery = await Battery.findOne({
             _id: req.params.id,
-        });
-        res.render("editbattery", { battery: battery });
-
-    } catch (error) {
-        res.status(400).send("Could not find battery list in database");
+        })
+        res.render("editbattery", {Battery:battery});
+    }
+    catch(error){
+        res.status(400).send("Could not find items in database")
         console.log(error);
     }
-});
+})
 
-
-router.post("/battery/edit/:id", async (req, res) => {
-    try {
-        await Battery.findOneAndUpdate({ _id: req.params.id }, req.body);
+router.post("/battery/edit", async (req, res) => {
+    try{
+        await Battery.findOneAndUpdate({_id: req.query.id}, req.body);
         res.redirect("/api/batteryList");
-    } catch (error) {
-        res.status(400).send("Could not edit battery list in database");
-        console.log(error);
     }
-});
-
+    catch(error){
+            res.status(400).send({message: "could not edit data"});
+            console.log(error);
+        }
+})
 
 // DELETING
 router.post("/battery/delete",async (req, res)=>{
