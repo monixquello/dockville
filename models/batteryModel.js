@@ -33,7 +33,7 @@ const batterySchema = new mongoose.Schema({
         type:String,
     },
     charge:{
-        type:String,
+        type:Number,
     }
 
 });

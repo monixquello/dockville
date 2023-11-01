@@ -1,5 +1,5 @@
 const express= require('express');
-const {ensureLoggedIn} = require('connect-ensure-login');
+// const {ensureLoggedIn} = require('connect-ensure-login');
 const Register = require('../models/registerModel');
 const Tyre = require('../models/tyreModel');
 const Battery = require('../models/batteryModel');
@@ -8,7 +8,7 @@ const router = express.Router();
 
 // TOTAL SALES FOR PARKING
 
-router.get('/dashboard',ensureLoggedIn("api/log"), async (req, res) => {
+router.get('/dashboard', async (req, res) => {
     let total, total1, total3;
     try{
         total = await Register.aggregate([
@@ -82,7 +82,7 @@ router.get('/parkdash',  (req, res) => {
     res.render('parkdash.pug')
 })
 
-router.get("/home", (req, res)=>{
+router.get("/home",  (req, res)=>{
     res.render("home.pug")
     
 

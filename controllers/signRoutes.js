@@ -95,31 +95,32 @@ router.get("/log", (req, res)=>{
   res.render("log.pug")
 });
 
-// router.post("/logi", passport.authenticate("local",
-// {failureRedirect:"/api/log"}),
-//   (req, res) => {
-//     req.session.user=req.user
-//     let loggedInUser = req.session.user.firstname;
-//     console.log(loggedInUser)
-//     console.log(req.body)
-//     console.log(req.session.user.role)
-//     if(req.session.user.role==='manager'){
-//       res.redirect('/api/dashboard')
-//     }
-//     if(req.session.user.role==='employee'){
-//       res.redirect('/api/home')
-//     }
-    
-    
-//   }
-// )
-
-router.post("/logi",passport.authenticate("local", { failureRedirect: "/api/log" }),
+router.post("/log", passport.authenticate("local",
+{failureRedirect:"/api/log"}),
   (req, res) => {
-    req.session.user = req.user;
-    res.redirect("/api/home");
+    try{
+    req.session.user=req.user
+    let loggedInUser = req.session.user.firstname;
+    console.log(loggedInUser)
+    console.log(req.body)
+    console.log(req.session.user.role)
+    if(req.session.user.role==='manager'){
+      res.redirect('/api/dashboard')
+    }
+    if(req.session.user.role==='employee'){
+      res.redirect('/api/home')
+    }
+    
   }
-);
+  catch(error){
+    console.log(error)
+    return res.status(400)
+  }
+}
+
+)
+
+
 
 
 

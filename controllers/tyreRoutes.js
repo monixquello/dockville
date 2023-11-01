@@ -53,7 +53,7 @@ router.post("/regtyre2", async(req, res)=>{
         const tyre2 = new Tyre2(req.body);
         await tyre2.save();
         console.log(req.body);
-        res.render("tyre2List.pug");
+        res.redirect("/api/tyre2List");
     }
     catch(error){
         res.status(400).render("tyre2.pug");

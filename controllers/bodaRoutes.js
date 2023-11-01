@@ -12,7 +12,7 @@ router.post('/regboda',async (req, res) => {
         const boda = new Boda(req.body);
         await boda.save(); 
         console.log(req.body);
-        res.redirect('/api/boda');
+        res.redirect('/api/bodaList');
     }
     catch(error){
         res.status(400).render('boda.pug')

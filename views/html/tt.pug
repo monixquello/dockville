@@ -1,0 +1,93 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css')
+  link(rel='stylesheet' href='../css/register.css')
+  title register
+.dockille
+  nav#nav-head.navbar.navbar-expand-lg.bg-body-tertiary
+    .container-fluid
+      a.navbar-brand(href='landing2.html')
+        img(src='../img/dock-logo.png' width='70px' height='70px')
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item.services.dockville
+          li.nav-item
+            a.nav-link(href='#')
+              h3 Parking
+          li.nav-item
+            a.nav-link(href='park.html')
+              button.btn.sign(type='submit') back
+h4.title Register form
+.box
+  .card
+    .card-body
+      form#formId.parking-form(name='register' action='#' onsubmit='return Validate()' method='POST')
+        .row
+          .col
+            label(for='firstname') Firstname
+            input#firstname.form-control(type='text' name='firstname' aria-label='firstname')
+            span#firstNameError
+          .col
+            label(for='lastname') Last name
+            input#lastname.form-control(type='text' name='lastname' aria-label='Last name')
+            span#lastNameError
+        .row
+          .col
+            label(for='telephone') Telephone
+            input#telephone.form-control(type='text' name='telephone' aria-label='telephone')
+            span#telephoneError
+        .mb-3
+          label#vehicle-type.form-label(for='vehicle-type' name='vehicle-type') Vehicle type
+          select.form-select(aria-label='Default select example')
+            option(selected='') select
+            option(value='coasters') Coasters
+            option(value='trucks') Trucks
+            option(value='taxi') Taxi
+            option(value='personalcar') Personal cars
+            option(value='bodas') Bodas
+          span#vehicle-typeError
+        .row
+          .col
+            label(for='model') Model
+            input#model.form-control(type='text' name='model' aria-label='model')
+            span#modelError
+          .col
+            label(for='color') Color
+            input#color.form-control(type='color' name='color' aria-label='color')
+            span#colorError
+        .row
+          .col
+            label(for='date') Date
+            input#date.form-control(type='date' name='date' aria-label='date')
+            span#dateError
+          .col
+            label(for='time') Time
+            input#time.form-control(type='time' name='time' aria-label='time')
+            span#timeError
+        .row
+          .col
+            label.form-label(for='parkingtype' name='parkingtype') Parking type
+            select.form-select(aria-label='Default select example')
+              option(selected='') select
+              option(value='day') Day
+              option(value='night') Night
+              option(value='less3hrs') Less than 3hrs
+            span#parkingtypeError
+          .col
+            label.form-label(for='status' name='status') Status
+            select.form-select(aria-label='Default select example')
+              option(selected='') select
+              option(value='in') in
+              option(value='out') out
+            span#statusError
+        .mb-3
+          label.form-label(for='charge') Charge
+          input#charge.form-control(type='charge' name='charge')
+          span#chargeError
+        button.btn.signin(type='submit') Submit
+script(src='../js/validate.js')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')
